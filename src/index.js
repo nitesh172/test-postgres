@@ -5,6 +5,8 @@ const userController = require("./controllers/user.controller")
 // const evaluationController = require("./controllers/evaluation.controller")
 // const topicController = require("./controllers/topic.controller")
 
+const Port = process.env.PORT || 2201
+
 const app = express()
 app.use(express.json())
 // app.use("/", async (req, res) => {
@@ -27,4 +29,11 @@ app.use("/users", userController)
 // app.use("/evaluations", evaluationController)
 // app.use("/topics", topicController)
 
-module.exports = app
+app.listen(Port, () => {
+  try {
+    console.log(`Running on Port- ${Port}`)
+  } catch (error) {
+    console.log(error)
+  }
+})
+
