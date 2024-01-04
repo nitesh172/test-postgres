@@ -29,7 +29,7 @@ router.post('/create', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   let { id } = req.params
-  pool.query('DELETE FROM users WHERE id = $1;', [id], (error, results) => {
+  pool.query('DELETE FROM users WHERE id = $1 RETURNING *;', [id], (error, results) => {
     if (error) {
       console.log(error)
     } else {
