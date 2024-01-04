@@ -24,7 +24,7 @@ app.use(express.json())
 //   Evaluations by id URL: http://localhost:2201/evaluations/_id
 //   `)
 //  })
-app.use("/users", userController)
+app.use("/api/users", userController)
 // app.use("/students", studentController)
 // app.use("/evaluations", evaluationController)
 // app.use("/topics", topicController)
